@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		
+		<script type="text/javascript" src="swfobject.js">
+		</script>
+		<script type="text/javascript">
+			function hideUrlBar() {
+				// hide URL field on the iPhone/iPod touch
+				var p = String(navigator.platform);
+	
+				container = document.getElementById("container");
+				if( p === 'iPad' || p === 'iPhone' || p === 'iPod touch' ){
+					var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+					if (parseInt(v[1], 10)>=7) {
+						// iOS >=7
+						if (container) {
+							container.style.top=(0) + "px";
+							container.style.left=(0) + "px";
+							container.style.width=(window.innerWidth) + "px";
+							container.style.height=(window.innerHeight) + "px";
+							if (pano) {
+								pano.setViewerSize(window.innerWidth, window.innerHeight);
+							}						}
+						window.scrollTo(0, 0);
+					} else {
+						if (container) {
+							var cheight;
+							switch(window.innerHeight) {
+								case 208:cheight=268; break; // landscape
+								case 260:cheight=320; break; // landscape, fullscreen
+								case 336:cheight=396; break; // portrait, in call status bar
+								case 356:cheight=416; break; // portrait 
+								case 424:cheight=484; break; // portrait iPhone5, in call status bar
+								case 444:cheight=504; break; // portrait iPhone5 
+								default: cheight=window.innerHeight;
+							}
+							if ((cheight) && ((container.offsetHeight!=cheight) || (window.innerHeight!=cheight))) {
+								container.style.height=cheight + "px";
+							}
+						}
+						document.getElementsByTagName("body")[0].style.marginTop="1px";
+						window.scrollTo(0, 1);
+					}
+				}
+			}            
+			if (window.addEventListener) {
+				window.addEventListener("load", hideUrlBar);
+				window.addEventListener("resize", hideUrlBar);
+				window.addEventListener("orientationchange", hideUrlBar);
+			}
+	
+		</script>
+		<style type="text/css" title="Default">
+			body, div, h1, h2, h3, span, p {
+				font-family: Verdana,Arial,Helvetica,sans-serif;
+				color: #000000; 
+			}
+			/* fullscreen */
+			html {
+				height:100%;
+			}
+			body {
+				height:100%;
+				margin: 0px;
+				overflow:hidden; /* disable scrollbars */
+			}
+			body {
+			  font-size: 10pt;
+			  background : #ffffff; 
+			}
+			table,tr,td {
+				font-size: 10pt;
+				border-color : #777777;
+				background : #dddddd; 
+				color: #000000; 
+				border-style : solid;
+				border-width : 2px;
+				padding: 5px;
+				border-collapse:collapse;
+			}
+			h1 {
+				font-size: 18pt;
+			}
+			h2 {
+				font-size: 14pt;
+			}
+			.warning { 
+				font-weight: bold;
+			} 
+			/* fix for scroll bars on webkit & Mac OS X Lion */ 
+			::-webkit-scrollbar {
+				background-color: rgba(0,0,0,0.5);
+				width: 0.75em;
+			}
+			::-webkit-scrollbar-thumb {
+    			background-color:  rgba(255,255,255,0.5);
+			}
+		</style>	
+	</head>
+	<body>
+		<script src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="pano2vr_player.js">
+		</script>
+		<script type="text/javascript" src="skin.js">
+		</script>
+		<div id="container" style="width:100%;height:100%;">
+		This content requires HTML5/CSS3, WebGL, or Adobe Flash Player Version 9 or higher.
+		</div>
+		<script type="text/javascript">
+	
+		// check for CSS3 3D transformations and WebGL
+		if (ggHasHtml5Css3D() || ggHasWebGL()) {
+		// use HTML5 panorama
+	
+			// create the panorama player with the container
+			pano=new pano2vrPlayer("container");
+			// add the skin object
+			skin=new pano2vrSkin(pano);
+			// load the configuration
+			panorama='<?xml version="1.0" encoding="UTF-8"?>';
+			panorama+='<tour start="node1">';
+			panorama+='  <panorama id="node1" hideabout="1">';
+			panorama+='    <view fovmode="0" pannorth="0">';
+			panorama+='      <start pan="126.6" fov="70" tilt="-5.5"/>';
+			panorama+='      <min pan="0" fov="5" tilt="-90"/>';
+			panorama+='      <max pan="360" fov="120" tilt="90"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="" datetime="" description="" copyright="" tags="" author="" source="" comment="" info="" longitude="" latitude=""/>';
+			panorama+='    <hotspots width="110" height="20" wordwrap="1">';
+			panorama+='      <label width="110" backgroundalpha="1" enabled="1" height="20" backgroundcolor="0xffffff" bordercolor="0x000000" border="1" textcolor="0x000000" background="1" borderalpha="1" borderradius="1" wordwrap="1" textalpha="1"/>';
+			panorama+='      <polystyle mode="0" backgroundalpha="0.2509803921568627" backgroundcolor="0x0000ff" bordercolor="0x0000ff" borderalpha="1"/>';
+			panorama+='      <hotspot title="Pool" target="" pan="159.626" skinid="" url="{node2}" id="Point01" tilt="-0.637432"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <input tile0url="images/Office_o_0.jpg" prev5url="images/Office_o_preview_5.jpg" prev4url="images/Office_o_preview_4.jpg" prev3url="images/Office_o_preview_3.jpg" prev2url="images/Office_o_preview_2.jpg" prev1url="images/Office_o_preview_1.jpg" prev0url="images/Office_o_preview_0.jpg" tile5url="images/Office_o_5.jpg" tilesize="1142" tile4url="images/Office_o_4.jpg" tile3url="images/Office_o_3.jpg" tilescale="1.008757" tile2url="images/Office_o_2.jpg" tile1url="images/Office_o_1.jpg">';
+			panorama+='      <preview color="0x808080"/>';
+			panorama+='    </input>';
+			panorama+='    <altinput tile0url="images/Office_o_800_0.jpg" screensize="1000" tile5url="images/Office_o_800_5.jpg" tilesize="800" tile4url="images/Office_o_800_4.jpg" tile3url="images/Office_o_800_3.jpg" tilescale="1.008757" tile2url="images/Office_o_800_2.jpg" tile1url="images/Office_o_800_1.jpg"/>';
+			panorama+='    <autorotate speed="0.100" nodedelay="0.00" startloaded="1" returntohorizon="0.000" delay="5.00" noderandom="1"/>';
+			panorama+='    <control simulatemass="1" lockedmouse="0" lockedkeyboard="0" dblclickfullscreen="1" invertwheel="0" lockedwheel="0" invertcontrol="0" speedwheel="1" sensitivity="9"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node2" hideabout="1">';
+			panorama+='    <view fovmode="0" pannorth="0">';
+			panorama+='      <start pan="150" fov="70" tilt="-8.5"/>';
+			panorama+='      <min pan="0" fov="5" tilt="-90"/>';
+			panorama+='      <max pan="360" fov="120" tilt="90"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="" datetime="" description="" copyright="" tags="" author="" source="" comment="" info="" longitude="" latitude=""/>';
+			panorama+='    <hotspots width="110" height="20" wordwrap="1">';
+			panorama+='      <label width="110" backgroundalpha="1" enabled="1" height="20" backgroundcolor="0xffffff" bordercolor="0x000000" border="1" textcolor="0x000000" background="1" borderalpha="1" borderradius="1" wordwrap="1" textalpha="1"/>';
+			panorama+='      <polystyle mode="0" backgroundalpha="0.2509803921568627" backgroundcolor="0x0000ff" bordercolor="0x0000ff" borderalpha="1"/>';
+			panorama+='      <hotspot title="Room 1" target="" pan="1.08168" skinid="" url="{node3}" id="Point01" tilt="0.11884"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <input tile0url="images/Pool_o_0.jpg" prev5url="images/Pool_o_preview_5.jpg" prev4url="images/Pool_o_preview_4.jpg" prev3url="images/Pool_o_preview_3.jpg" prev2url="images/Pool_o_preview_2.jpg" prev1url="images/Pool_o_preview_1.jpg" prev0url="images/Pool_o_preview_0.jpg" tile5url="images/Pool_o_5.jpg" tilesize="1142" tile4url="images/Pool_o_4.jpg" tile3url="images/Pool_o_3.jpg" tilescale="1.008757" tile2url="images/Pool_o_2.jpg" tile1url="images/Pool_o_1.jpg">';
+			panorama+='      <preview color="0x808080"/>';
+			panorama+='    </input>';
+			panorama+='    <altinput tile0url="images/Pool_o_800_0.jpg" screensize="1000" tile5url="images/Pool_o_800_5.jpg" tilesize="800" tile4url="images/Pool_o_800_4.jpg" tile3url="images/Pool_o_800_3.jpg" tilescale="1.008757" tile2url="images/Pool_o_800_2.jpg" tile1url="images/Pool_o_800_1.jpg"/>';
+			panorama+='    <autorotate speed="0.100" nodedelay="0.00" startloaded="1" returntohorizon="0.000" delay="5.00" noderandom="1"/>';
+			panorama+='    <control simulatemass="1" lockedmouse="0" lockedkeyboard="0" dblclickfullscreen="1" invertwheel="0" lockedwheel="0" invertcontrol="0" speedwheel="1" sensitivity="9"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node3" hideabout="1">';
+			panorama+='    <view fovmode="0" pannorth="0">';
+			panorama+='      <start pan="0" fov="70" tilt="0"/>';
+			panorama+='      <min pan="0" fov="5" tilt="-90"/>';
+			panorama+='      <max pan="360" fov="120" tilt="90"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="" datetime="" description="" copyright="" tags="" author="" source="" comment="" info="" longitude="" latitude=""/>';
+			panorama+='    <hotspots width="110" height="20" wordwrap="1">';
+			panorama+='      <label width="110" backgroundalpha="1" enabled="1" height="20" backgroundcolor="0xffffff" bordercolor="0x000000" border="1" textcolor="0x000000" background="1" borderalpha="1" borderradius="1" wordwrap="1" textalpha="1"/>';
+			panorama+='      <polystyle mode="0" backgroundalpha="0.2509803921568627" backgroundcolor="0x0000ff" bordercolor="0x0000ff" borderalpha="1"/>';
+			panorama+='      <hotspot title="Room 2" target="" pan="-106.23" skinid="" url="{node4}" id="Point01" tilt="2.82523"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <input tile0url="images/Room 1_o_0.jpg" prev5url="images/Room 1_o_preview_5.jpg" prev4url="images/Room 1_o_preview_4.jpg" prev3url="images/Room 1_o_preview_3.jpg" prev2url="images/Room 1_o_preview_2.jpg" prev1url="images/Room 1_o_preview_1.jpg" prev0url="images/Room 1_o_preview_0.jpg" tile5url="images/Room 1_o_5.jpg" tilesize="1142" tile4url="images/Room 1_o_4.jpg" tile3url="images/Room 1_o_3.jpg" tilescale="1.008757" tile2url="images/Room 1_o_2.jpg" tile1url="images/Room 1_o_1.jpg">';
+			panorama+='      <preview color="0x808080"/>';
+			panorama+='    </input>';
+			panorama+='    <altinput tile0url="images/Room 1_o_800_0.jpg" screensize="1000" tile5url="images/Room 1_o_800_5.jpg" tilesize="800" tile4url="images/Room 1_o_800_4.jpg" tile3url="images/Room 1_o_800_3.jpg" tilescale="1.008757" tile2url="images/Room 1_o_800_2.jpg" tile1url="images/Room 1_o_800_1.jpg"/>';
+			panorama+='    <autorotate speed="0.100" nodedelay="0.00" startloaded="1" returntohorizon="0.000" delay="5.00" noderandom="1"/>';
+			panorama+='    <control simulatemass="1" lockedmouse="0" lockedkeyboard="0" dblclickfullscreen="1" invertwheel="0" lockedwheel="0" invertcontrol="0" speedwheel="1" sensitivity="9"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node4" hideabout="1">';
+			panorama+='    <view fovmode="0" pannorth="0">';
+			panorama+='      <start pan="0" fov="70" tilt="0"/>';
+			panorama+='      <min pan="0" fov="5" tilt="-90"/>';
+			panorama+='      <max pan="360" fov="120" tilt="90"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="" datetime="" description="" copyright="" tags="" author="" source="" comment="" info="" longitude="" latitude=""/>';
+			panorama+='    <hotspots width="110" height="20" wordwrap="1">';
+			panorama+='      <label width="110" backgroundalpha="1" enabled="1" height="20" backgroundcolor="0xffffff" bordercolor="0x000000" border="1" textcolor="0x000000" background="1" borderalpha="1" borderradius="1" wordwrap="1" textalpha="1"/>';
+			panorama+='      <polystyle mode="0" backgroundalpha="0.2509803921568627" backgroundcolor="0x0000ff" bordercolor="0x0000ff" borderalpha="1"/>';
+			panorama+='      <hotspot title="Second Floor" target="" pan="144.177" skinid="11" url="{node5}" id="Point01" tilt="-1.29865"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <input tile0url="images/Room 2_o_0.jpg" prev5url="images/Room 2_o_preview_5.jpg" prev4url="images/Room 2_o_preview_4.jpg" prev3url="images/Room 2_o_preview_3.jpg" prev2url="images/Room 2_o_preview_2.jpg" prev1url="images/Room 2_o_preview_1.jpg" prev0url="images/Room 2_o_preview_0.jpg" tile5url="images/Room 2_o_5.jpg" tilesize="1142" tile4url="images/Room 2_o_4.jpg" tile3url="images/Room 2_o_3.jpg" tilescale="1.008757" tile2url="images/Room 2_o_2.jpg" tile1url="images/Room 2_o_1.jpg">';
+			panorama+='      <preview color="0x808080"/>';
+			panorama+='    </input>';
+			panorama+='    <altinput tile0url="images/Room 2_o_800_0.jpg" screensize="1000" tile5url="images/Room 2_o_800_5.jpg" tilesize="800" tile4url="images/Room 2_o_800_4.jpg" tile3url="images/Room 2_o_800_3.jpg" tilescale="1.008757" tile2url="images/Room 2_o_800_2.jpg" tile1url="images/Room 2_o_800_1.jpg"/>';
+			panorama+='    <autorotate speed="0.100" nodedelay="0.00" startloaded="1" returntohorizon="0.000" delay="5.00" noderandom="1"/>';
+			panorama+='    <control simulatemass="1" lockedmouse="0" lockedkeyboard="0" dblclickfullscreen="1" invertwheel="0" lockedwheel="0" invertcontrol="0" speedwheel="1" sensitivity="9"/>';
+			panorama+='  </panorama>';
+			panorama+='  <panorama id="node5" hideabout="1">';
+			panorama+='    <view fovmode="0" pannorth="0">';
+			panorama+='      <start pan="0" fov="70" tilt="0"/>';
+			panorama+='      <min pan="0" fov="5" tilt="-90"/>';
+			panorama+='      <max pan="360" fov="120" tilt="90"/>';
+			panorama+='    </view>';
+			panorama+='    <userdata title="" datetime="" description="" copyright="" tags="" author="" source="" comment="" info="" longitude="" latitude=""/>';
+			panorama+='    <hotspots width="110" height="20" wordwrap="1">';
+			panorama+='      <label width="110" backgroundalpha="1" enabled="1" height="20" backgroundcolor="0xffffff" bordercolor="0x000000" border="1" textcolor="0x000000" background="1" borderalpha="1" borderradius="1" wordwrap="1" textalpha="1"/>';
+			panorama+='      <polystyle mode="0" backgroundalpha="0.2509803921568627" backgroundcolor="0x0000ff" bordercolor="0x0000ff" borderalpha="1"/>';
+			panorama+='      <hotspot title="Office" target="" pan="55.5823" skinid="" url="{node1}" id="Point01" tilt="-37.9498"/>';
+			panorama+='    </hotspots>';
+			panorama+='    <media/>';
+			panorama+='    <input tile0url="images/Second Floor_o_0.jpg" prev5url="images/Second Floor_o_preview_5.jpg" prev4url="images/Second Floor_o_preview_4.jpg" prev3url="images/Second Floor_o_preview_3.jpg" prev2url="images/Second Floor_o_preview_2.jpg" prev1url="images/Second Floor_o_preview_1.jpg" prev0url="images/Second Floor_o_preview_0.jpg" tile5url="images/Second Floor_o_5.jpg" tilesize="1142" tile4url="images/Second Floor_o_4.jpg" tile3url="images/Second Floor_o_3.jpg" tilescale="1.008757" tile2url="images/Second Floor_o_2.jpg" tile1url="images/Second Floor_o_1.jpg">';
+			panorama+='      <preview color="0x808080"/>';
+			panorama+='    </input>';
+			panorama+='    <altinput tile0url="images/Second Floor_o_800_0.jpg" screensize="1000" tile5url="images/Second Floor_o_800_5.jpg" tilesize="800" tile4url="images/Second Floor_o_800_4.jpg" tile3url="images/Second Floor_o_800_3.jpg" tilescale="1.008757" tile2url="images/Second Floor_o_800_2.jpg" tile1url="images/Second Floor_o_800_1.jpg"/>';
+			panorama+='    <autorotate speed="0.100" nodedelay="0.00" startloaded="1" returntohorizon="0.000" delay="5.00" noderandom="1"/>';
+			panorama+='    <control simulatemass="1" lockedmouse="0" lockedkeyboard="0" dblclickfullscreen="1" invertwheel="0" lockedwheel="0" invertcontrol="0" speedwheel="1" sensitivity="9"/>';
+			panorama+='  </panorama>';
+			panorama+='</tour>';
+			panorama+='';
+			pano.readConfigString(panorama);
+			// hide the URL bar on the iPhone
+			setTimeout(function() { hideUrlBar(); }, 10);
+		} else 
+		if (swfobject.hasFlashPlayerVersion("10.0.0")) {
+			var flashvars = {};
+			var params = {};
+			// enable javascript interface
+			flashvars.externalinterface="1";
+			params.quality = "high";
+			params.bgcolor = "#ffffff";
+			params.allowscriptaccess = "sameDomain";
+			params.allowfullscreen = "true";
+			var attributes = {};
+			attributes.id = "pano";
+			attributes.name = "pano";
+			attributes.align = "middle";
+			flashvars.skinxml="skin.xml";
+			flashvars.panoxml="Office_out.xml";
+			params.base=".";
+			swfobject.embedSWF(
+				"pano2vr_player.swf", "container", 
+				"100%", "100%",
+				"9.0.0", "", 
+				flashvars, params, attributes);
+			
+		}
+		</script>
+		<noscript>
+			<p><b>Please enable Javascript!</b></p>
+		</noscript>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tour start="node1">
+  <panorama id="node1" hideabout="1">
+    <view fovmode="0" pannorth="0">
+      <start pan="126.6" fov="70" tilt="-5.5"/>
+      <min pan="0" fov="5" tilt="-90"/>
+      <max pan="360" fov="120" tilt="90"/>
+    </view>
+    <userdata title="" datetime="" description="" copyright="" tags="" author="" source="" comment="" info="" longitude="" latitude=""/>
+    <hotspots width="110" height="20" wordwrap="1">
+      <label width="110" backgroundalpha="1" enabled="1" height="20" backgroundcolor="0xffffff" bordercolor="0x000000" border="1" textcolor="0x000000" background="1" borderalpha="1" borderradius="1" wordwrap="1" textalpha="1"/>
+      <polystyle mode="0" backgroundalpha="0.2509803921568627" backgroundcolor="0x0000ff" bordercolor="0x0000ff" borderalpha="1"/>
+      <hotspot title="Pool" target="" pan="159.626" skinid="" url="{node2}" id="Point01" tilt="-0.637432"/>
+    </hotspots>
+    <media/>
+    <input tile0url="images/Office_o_0.jpg" prev5url="images/Office_o_preview_5.jpg" prev4url="images/Office_o_preview_4.jpg" prev3url="images/Office_o_preview_3.jpg" prev2url="images/Office_o_preview_2.jpg" prev1url="images/Office_o_preview_1.jpg" prev0url="images/Office_o_preview_0.jpg" tile5url="images/Office_o_5.jpg" tilesize="1142" tile4url="images/Office_o_4.jpg" tile3url="images/Office_o_3.jpg" tilescale="1.008757" tile2url="images/Office_o_2.jpg" tile1url="images/Office_o_1.jpg">
+      <preview color="0x808080"/>
+    </input>
+    <altinput tile0url="images/Office_o_800_0.jpg" screensize="1000" tile5url="images/Office_o_800_5.jpg" tilesize="800" tile4url="images/Office_o_800_4.jpg" tile3url="images/Office_o_800_3.jpg" tilescale="1.008757" tile2url="images/Office_o_800_2.jpg" tile1url="images/Office_o_800_1.jpg"/>
+    <autorotate speed="0.100" nodedelay="0.00" startloaded="1" returntohorizon="0.000" delay="5.00" noderandom="1"/>
+    <control simulatemass="1" lockedmouse="0" lockedkeyboard="0" dblclickfullscreen="1" invertwheel="0" lockedwheel="0" invertcontrol="0" speedwheel="1" sensitivity="9"/>
+  </panorama>
+  <panorama id="node2" hideabout="1">
+    <view fovmode="0" pannorth="0">
+      <start pan="150" fov="70" tilt="-8.5"/>
+      <min pan="0" fov="5" tilt="-90"/>
+      <max pan="360" fov="120" tilt="90"/>
+    </view>
+    <userdata title="" datetime="" description="" copyright="" tags="" author="" source="" comment="" info="" longitude="" latitude=""/>
+    <hotspots width="110" height="20" wordwrap="1">
+      <label width="110" backgroundalpha="1" enabled="1" height="20" backgroundcolor="0xffffff" bordercolor="0x000000" border="1" textcolor="0x000000" background="1" borderalpha="1" borderradius="1" wordwrap="1" textalpha="1"/>
+      <polystyle mode="0" backgroundalpha="0.2509803921568627" backgroundcolor="0x0000ff" bordercolor="0x0000ff" borderalpha="1"/>
+      <hotspot title="Room 1" target="" pan="1.08168" skinid="" url="{node3}" id="Point01" tilt="0.11884"/>
+    </hotspots>
+    <media/>
+    <input tile0url="images/Pool_o_0.jpg" prev5url="images/Pool_o_preview_5.jpg" prev4url="images/Pool_o_preview_4.jpg" prev3url="images/Pool_o_preview_3.jpg" prev2url="images/Pool_o_preview_2.jpg" prev1url="images/Pool_o_preview_1.jpg" prev0url="images/Pool_o_preview_0.jpg" tile5url="images/Pool_o_5.jpg" tilesize="1142" tile4url="images/Pool_o_4.jpg" tile3url="images/Pool_o_3.jpg" tilescale="1.008757" tile2url="images/Pool_o_2.jpg" tile1url="images/Pool_o_1.jpg">
+      <preview color="0x808080"/>
+    </input>
+    <altinput tile0url="images/Pool_o_800_0.jpg" screensize="1000" tile5url="images/Pool_o_800_5.jpg" tilesize="800" tile4url="images/Pool_o_800_4.jpg" tile3url="images/Pool_o_800_3.jpg" tilescale="1.008757" tile2url="images/Pool_o_800_2.jpg" tile1url="images/Pool_o_800_1.jpg"/>
+    <autorotate speed="0.100" nodedelay="0.00" startloaded="1" returntohorizon="0.000" delay="5.00" noderandom="1"/>
+    <control simulatemass="1" lockedmouse="0" lockedkeyboard="0" dblclickfullscreen="1" invertwheel="0" lockedwheel="0" invertcontrol="0" speedwheel="1" sensitivity="9"/>
+  </panorama>
+  <panorama id="node3" hideabout="1">
+    <view fovmode="0" pannorth="0">
+      <start pan="0" fov="70" tilt="0"/>
+      <min pan="0" fov="5" tilt="-90"/>
+      <max pan="360" fov="120" tilt="90"/>
+    </view>
+    <userdata title="" datetime="" description="" copyright="" tags="" author="" source="" comment="" info="" longitude="" latitude=""/>
+    <hotspots width="110" height="20" wordwrap="1">
+      <label width="110" backgroundalpha="1" enabled="1" height="20" backgroundcolor="0xffffff" bordercolor="0x000000" border="1" textcolor="0x000000" background="1" borderalpha="1" borderradius="1" wordwrap="1" textalpha="1"/>
+      <polystyle mode="0" backgroundalpha="0.2509803921568627" backgroundcolor="0x0000ff" bordercolor="0x0000ff" borderalpha="1"/>
+      <hotspot title="Room 2" target="" pan="-106.23" skinid="" url="{node4}" id="Point01" tilt="2.82523"/>
+    </hotspots>
+    <media/>
+    <input tile0url="images/Room 1_o_0.jpg" prev5url="images/Room 1_o_preview_5.jpg" prev4url="images/Room 1_o_preview_4.jpg" prev3url="images/Room 1_o_preview_3.jpg" prev2url="images/Room 1_o_preview_2.jpg" prev1url="images/Room 1_o_preview_1.jpg" prev0url="images/Room 1_o_preview_0.jpg" tile5url="images/Room 1_o_5.jpg" tilesize="1142" tile4url="images/Room 1_o_4.jpg" tile3url="images/Room 1_o_3.jpg" tilescale="1.008757" tile2url="images/Room 1_o_2.jpg" tile1url="images/Room 1_o_1.jpg">
+      <preview color="0x808080"/>
+    </input>
+    <altinput tile0url="images/Room 1_o_800_0.jpg" screensize="1000" tile5url="images/Room 1_o_800_5.jpg" tilesize="800" tile4url="images/Room 1_o_800_4.jpg" tile3url="images/Room 1_o_800_3.jpg" tilescale="1.008757" tile2url="images/Room 1_o_800_2.jpg" tile1url="images/Room 1_o_800_1.jpg"/>
+    <autorotate speed="0.100" nodedelay="0.00" startloaded="1" returntohorizon="0.000" delay="5.00" noderandom="1"/>
+    <control simulatemass="1" lockedmouse="0" lockedkeyboard="0" dblclickfullscreen="1" invertwheel="0" lockedwheel="0" invertcontrol="0" speedwheel="1" sensitivity="9"/>
+  </panorama>
+  <panorama id="node4" hideabout="1">
+    <view fovmode="0" pannorth="0">
+      <start pan="0" fov="70" tilt="0"/>
+      <min pan="0" fov="5" tilt="-90"/>
+      <max pan="360" fov="120" tilt="90"/>
+    </view>
+    <userdata title="" datetime="" description="" copyright="" tags="" author="" source="" comment="" info="" longitude="" latitude=""/>
+    <hotspots width="110" height="20" wordwrap="1">
+      <label width="110" backgroundalpha="1" enabled="1" height="20" backgroundcolor="0xffffff" bordercolor="0x000000" border="1" textcolor="0x000000" background="1" borderalpha="1" borderradius="1" wordwrap="1" textalpha="1"/>
+      <polystyle mode="0" backgroundalpha="0.2509803921568627" backgroundcolor="0x0000ff" bordercolor="0x0000ff" borderalpha="1"/>
+      <hotspot title="Second Floor" target="" pan="144.177" skinid="11" url="{node5}" id="Point01" tilt="-1.29865"/>
+    </hotspots>
+    <media/>
+    <input tile0url="images/Room 2_o_0.jpg" prev5url="images/Room 2_o_preview_5.jpg" prev4url="images/Room 2_o_preview_4.jpg" prev3url="images/Room 2_o_preview_3.jpg" prev2url="images/Room 2_o_preview_2.jpg" prev1url="images/Room 2_o_preview_1.jpg" prev0url="images/Room 2_o_preview_0.jpg" tile5url="images/Room 2_o_5.jpg" tilesize="1142" tile4url="images/Room 2_o_4.jpg" tile3url="images/Room 2_o_3.jpg" tilescale="1.008757" tile2url="images/Room 2_o_2.jpg" tile1url="images/Room 2_o_1.jpg">
+      <preview color="0x808080"/>
+    </input>
+    <altinput tile0url="images/Room 2_o_800_0.jpg" screensize="1000" tile5url="images/Room 2_o_800_5.jpg" tilesize="800" tile4url="images/Room 2_o_800_4.jpg" tile3url="images/Room 2_o_800_3.jpg" tilescale="1.008757" tile2url="images/Room 2_o_800_2.jpg" tile1url="images/Room 2_o_800_1.jpg"/>
+    <autorotate speed="0.100" nodedelay="0.00" startloaded="1" returntohorizon="0.000" delay="5.00" noderandom="1"/>
+    <control simulatemass="1" lockedmouse="0" lockedkeyboard="0" dblclickfullscreen="1" invertwheel="0" lockedwheel="0" invertcontrol="0" speedwheel="1" sensitivity="9"/>
+  </panorama>
+  <panorama id="node5" hideabout="1">
+    <view fovmode="0" pannorth="0">
+      <start pan="0" fov="70" tilt="0"/>
+      <min pan="0" fov="5" tilt="-90"/>
+      <max pan="360" fov="120" tilt="90"/>
+    </view>
+    <userdata title="" datetime="" description="" copyright="" tags="" author="" source="" comment="" info="" longitude="" latitude=""/>
+    <hotspots width="110" height="20" wordwrap="1">
+      <label width="110" backgroundalpha="1" enabled="1" height="20" backgroundcolor="0xffffff" bordercolor="0x000000" border="1" textcolor="0x000000" background="1" borderalpha="1" borderradius="1" wordwrap="1" textalpha="1"/>
+      <polystyle mode="0" backgroundalpha="0.2509803921568627" backgroundcolor="0x0000ff" bordercolor="0x0000ff" borderalpha="1"/>
+      <hotspot title="Office" target="" pan="55.5823" skinid="" url="{node1}" id="Point01" tilt="-37.9498"/>
+    </hotspots>
+    <media/>
+    <input tile0url="images/Second Floor_o_0.jpg" prev5url="images/Second Floor_o_preview_5.jpg" prev4url="images/Second Floor_o_preview_4.jpg" prev3url="images/Second Floor_o_preview_3.jpg" prev2url="images/Second Floor_o_preview_2.jpg" prev1url="images/Second Floor_o_preview_1.jpg" prev0url="images/Second Floor_o_preview_0.jpg" tile5url="images/Second Floor_o_5.jpg" tilesize="1142" tile4url="images/Second Floor_o_4.jpg" tile3url="images/Second Floor_o_3.jpg" tilescale="1.008757" tile2url="images/Second Floor_o_2.jpg" tile1url="images/Second Floor_o_1.jpg">
+      <preview color="0x808080"/>
+    </input>
+    <altinput tile0url="images/Second Floor_o_800_0.jpg" screensize="1000" tile5url="images/Second Floor_o_800_5.jpg" tilesize="800" tile4url="images/Second Floor_o_800_4.jpg" tile3url="images/Second Floor_o_800_3.jpg" tilescale="1.008757" tile2url="images/Second Floor_o_800_2.jpg" tile1url="images/Second Floor_o_800_1.jpg"/>
+    <autorotate speed="0.100" nodedelay="0.00" startloaded="1" returntohorizon="0.000" delay="5.00" noderandom="1"/>
+    <control simulatemass="1" lockedmouse="0" lockedkeyboard="0" dblclickfullscreen="1" invertwheel="0" lockedwheel="0" invertcontrol="0" speedwheel="1" sensitivity="9"/>
+  </panorama>
+</tour>
